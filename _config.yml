@@ -11,7 +11,7 @@ relative_permalinks: true
 # Setup
 title:               OK Computer
 tagline:             'Yet another tech blog...'
-description:         'Ici on parle SAN, virtualisation, OS.'
+description:         'Ici on parle SAN, virtualisation, OS et plus généralement tout ce qui touche à l'informatique'
 url:                 http://www.okcomputer.io
 baseurl:             /
 paginate:            5
