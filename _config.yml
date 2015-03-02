@@ -12,7 +12,7 @@ relative_permalinks: true
 title:               OK Computer
 tagline:             'Yet another tech blog...'
 description:         'Ici on parle SAN, virtualisation, OS.'
-url:                 http://okcomputerpro.github.io
+url:                 http://www.okcomputer.io
 baseurl:             /
 paginate:            5
 
