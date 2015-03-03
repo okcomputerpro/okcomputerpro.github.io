@@ -15,9 +15,3 @@ Je suis un ingénieur systèmes et stockage travaillant pour un grand intégrate
 
 ### Comment me contacter ?
 Le site ne disposant pas de système de commentaires, n'hésitez pas à me contacter par mail ou sur twitter.
-
-<p>
-     <a href="{{ site.author.url }}"><i class="fa fa-twitter fa-3x"></i></a>
-     <a href="https://github.com/{{ site.author.github }}"><i class="fa fa-github fa-3x"></i></a>
-     <a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope-o fa-3x"></i></a>
-</p>
