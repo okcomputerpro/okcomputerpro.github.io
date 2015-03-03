@@ -3,7 +3,7 @@ layout: page
 title: A propos
 ---
 
-### Le blog
+### Le site
 Ce blog a pour but de partager mes connaissances sur des sujets qui tournent principalement autour de la virtualisation, du stockage et des systèmes d'exploitation.
 
 vous l'aurez peut-être deviné, le nom du blog est un hommage à un album du groupe Radiohead.
