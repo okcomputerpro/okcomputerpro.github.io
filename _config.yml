@@ -4,7 +4,7 @@ email:       okcomputerpro@gmail.com
 author:      OK Computer
 description: ""
 baseurl:     ""
-url:         "http://okcomputer.io"
+url:         "http://blog.okcomputer.io"
 
 # Google analytics
 google_analytics: "UA-60310011-1"
