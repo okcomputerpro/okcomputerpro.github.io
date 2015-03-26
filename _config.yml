@@ -1,27 +1,52 @@
-# Dependencies
-markdown:            redcarpet
-highlighter:         pygments
+# Site settings
+title:       OK Computer
+email:       okcomputerpro@gmail.com
+author:      OK Computer
+description: ""
+baseurl:     ""
+url:         "http://okcomputer.io"
 
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-relative_permalinks: true
+# Google analytics
+google_analytics: "UA-60310011-1"
 
-# Setup
-title:               OK Computer
-tagline:             'Yet another tech blog...'
-description:         'Ici on parle essentiellement virtualisation, stockage et OS mais pas que !'
-url:                 http://blog.okcomputer.io
-baseurl:             /
-paginate:            5
+# Optional features
+animated:           true
+show_related_posts: true
+show_post_footers:  true
 
-# About/contact
-author:
-  name:              OK Computer
-  url:               https://twitter.com/okcomputerpro
-  email:             okcomputerpro@gmail.com
-  github:            okcomputerpro
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
 
-# Custom vars
-version:             1.0.0
+# Social icons
+show_social_icons: true
+github_username: okcomputerpro
+stackoverflow_id:
+twitter_username: okcomputerpro
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Post sharing icons
+show_sharing_icons: true
+share_text: 'Share this post!'
+# Change to 'true' to enable individual icons
+share_facebook: false
+share_twitter: true
+share_googleplus: false
+share_linkedin: false
+share_digg: false
+share_tumblr: false
+share_reddit: false
+share_stumbleupon: false
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     3
+sass:
+  compressed: true
