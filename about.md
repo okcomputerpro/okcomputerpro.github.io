@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Pixyll
+title: A propos de OK Computer
 permalink: /about/
 ---
 
