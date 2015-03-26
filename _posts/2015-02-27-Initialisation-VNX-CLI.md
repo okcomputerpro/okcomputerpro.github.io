@@ -3,9 +3,9 @@ layout: post
 title: Initialiser une baie EMC VNX en ligne de commande
 ---
 
-> Attention cette procédure ne s'applique qu'aux baies VNX block !
-
 Tous ceux qui ont déjà installé une baie EMC VNX savent que l'outil d'initialisation fournie par EMC (EMC Storage System Initialization) est plutôt capricieux. Réussir à lui faire découvrir la baie sans avoir recours à un switch dédié peut parfois s'avérer compliqué.
+
+> Attention cette procédure ne s'applique qu'aux baies VNX block !
 
 Pour contourner ce problème je préfère maintenant initialiser la baie en ligne de commande avec l'outil NaviSecCLI (téléchargeable sur [le site support d'EMC](https://support.emc.com)). Les 2 contrôleurs ont une IP par défaut qui peut être utilisée pour configurer la baie:
 
