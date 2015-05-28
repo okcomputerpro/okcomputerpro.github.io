@@ -27,6 +27,9 @@ Passons maintenant à la configuration de la baie. Les différentes étapes sero
 - Configuration du FastCache (si vous avez la licence...)
 - Création d'un Storage Pool
 - Création de LUN
+- Création d'un Storage Group
+- Ajout d'un host dans un Storage Group
+- Ajout d'un LUN dans un Storage Group
 
 > Les différentes options des commandes seront bien sur à modifier en fonction de la configuration de votre baie (emplacement des disques) et des IP des différents serveurs de votre infrastructure (NTP, DNS).
 
