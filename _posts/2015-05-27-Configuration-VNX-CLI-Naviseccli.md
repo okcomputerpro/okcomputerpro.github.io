@@ -3,7 +3,7 @@ layout: post
 title: Configurer une baie EMC VNX en ligne de commande
 ---
 
-Pour faire suite à [l'article](http://blog.okcomputer.io/2015/02/27/Initialisation-VNX-CLI/) expliquant comment initialiser une baie EMC VNX en CLI avec l'utilitaire Naviseccli, voici quelques commandes supplémentaires permettant d'aller jusqu'à la présentation des LUN aux hôtes.
+Pour faire suite à [l'article](http://blog.okcomputer.io/2015/02/27/Initialisation-VNX-CLI/) expliquant comment initialiser une baie EMC VNX en CLI à l'aide de l'utilitaire EMC Naviseccli, voici quelques commandes supplémentaires permettant d'aller jusqu'à la présentation des LUN aux hôtes.
 
 #### Utilisation d'un fichier de sécurité
 
