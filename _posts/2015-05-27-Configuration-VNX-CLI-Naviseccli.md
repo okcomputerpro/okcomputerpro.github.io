@@ -23,7 +23,7 @@ Passons maintenant à la configuration de la baie. Les différentes étapes sero
 - Modification des noms des SP (facultatif...)
 - Synchronisation du temps avec des serveurs NTP
 - Configuration des serveurs DNS et du domaine
-- Activation des statistiques (facultatif sauf si l'on souhaite utiliser EMC Monitoring & Reporting)
+- Activation des statistiques (facultatif sauf si l'on souhaite par exemple utiliser EMC Monitoring & Reporting)
 - Configuration du FastCache (si vous avez la licence...)
 - Création d'un Storage Pool
 - Création de LUN
@@ -33,6 +33,12 @@ Passons maintenant à la configuration de la baie. Les différentes étapes sero
 
 > Les différentes options des commandes seront bien sur à modifier en fonction de la configuration de votre baie (emplacement des disques) et des IP des différents serveurs de votre infrastructure (NTP, DNS).
 
+#### Quelques remarques sur la syntaxe à utiliser pour Naviseccli
+
+- Pour passer une liste en argument (par exemple une liste d'IP), il suffit d'ajouter un espace entre chaques elements (192.168.1.1 192.168.1.2 etc...)
+- Les disques sont nommés en fonction de leur emplacement dans la baie et sous la forme `numérodubus_numérodelenclosure_numéroemplacement`. Par exemple si dans Unisphere vous voyez un disque référencé `Bus 0 Enclosure 1 Disk 10` l'équivalent pour Navisseccli sera `0_1_10`
+
+#### Configuration de la baie
 ##### Modifier le nom des SP:
 
 ```
@@ -69,13 +75,15 @@ naviseccli -h 192.168.1.100 cache -fast -create -disks 1_0_0 1_0_1 -mode rw -rty
 
 ##### Création d'un storage pool:
 
-La commande va créer un storage pool sur l'ensemble des disques indiqués via le paramètre `-disks`, le type de RAID est défini par le paramètre `-rtype` (ici RAID 5) et le nombre de disques contenu dans chaque grappe RAID est défini par le paramètre `-rdrivecount` (ici 5 ce qui équivaut à 4+1).
+La commande va créer un storage pool sur l'ensemble des disques indiqués via le paramètre `-disks`, le type de RAID est défini par le paramètre `-rtype` (ici RAID 5) et le nombre de disques contenus dans chaques grappe RAID est défini par le paramètre `-rdrivecount` (ici 5 ce qui équivaut à 4+1).
 
 ```
 naviseccli -h 192.168.1.100 storagepool -create -disks 0_0_4 0_0_5 0_0_6 0_0_7 0_0_8 0_0_9 0_0_10 0_0_11 0_0_12 0_0_13 0_0_14 0_0_15 0_0_16 0_0_17 0_0_18 0_0_19 0_0_20 0_0_21 0_0_22 0_0_23 -rtype r_5 -rdrivecount 5 -name Pool01 -autoTiering scheduled -fastcache on
 ```
 
 ##### Création d'un LUN:
+
+
 
 ```
 naviseccli -h 192.168.1.100 lun -create -type nonThin -poolName Pool01  -capacity 1024 -sq gb -name LUN01 -l 0
