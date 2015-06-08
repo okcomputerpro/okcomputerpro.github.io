@@ -5,7 +5,7 @@ title: Configurer une baie EMC VNX en ligne de commande
 
 Pour faire suite à [l'article](http://blog.okcomputer.io/2015/02/27/Initialisation-VNX-CLI/) expliquant comment initialiser une baie EMC VNX en CLI à l'aide de l'utilitaire EMC Naviseccli, voici quelques commandes supplémentaires permettant d'aller jusqu'à la présentation des LUN aux hôtes.
 
-#### Utilisation d'un fichier de sécurité
+### Utilisation d'un fichier de sécurité
 
 Dans un premier temps je vous conseille d'enregistrer dans un fichier de sécurité les identifiants du compte Unisphere que vous utiliserez pour configurer la baie. Cela vous évitera de retaper à chaque commande les informations d'identification. Attention, par défaut, le fichier de sécurité est stocké dans votre profil utilisateur.
 
@@ -17,12 +17,12 @@ naviseccli -AddUserSecurity -Scope 0 -user sysadmin -password sysadmin
 
 Une fois fait, vous pourrez executer vos commandes naviseccli sans fournir d'identifiants.
 
-#### Quelques remarques sur la syntaxe à utiliser pour Naviseccli
+### Quelques remarques sur la syntaxe à utiliser pour Naviseccli
 
 - Pour passer une liste en argument (par exemple une liste d'IP), il suffit d'ajouter un espace entre chaque élément (192.168.1.1 192.168.1.2 etc...)
 - Les disques sont nommés en fonction de leur emplacement dans la baie et sous la forme `numérodubus_numérodelenclosure_numéroemplacement`. Par exemple si dans Unisphere vous voyez un disque référencé `Bus 0 Enclosure 1 Disk 10` l'équivalent pour Navisseccli sera `0_1_10`
 
-#### Etapes de configuration
+### Etapes de configuration
 
 Passons maintenant à la configuration de la baie. Les différentes étapes seront les suivantes:
 - Modification des noms des SP (facultatif...)
@@ -38,7 +38,7 @@ Passons maintenant à la configuration de la baie. Les différentes étapes sero
 
 > Les différentes options des commandes seront bien sur à modifier en fonction de la configuration de votre baie (emplacement des disques) et des IP des différents serveurs de votre infrastructure (NTP, DNS).
 
-#### Configuration de la baie
+### Configuration de la baie
 ##### Modifier le nom des SP:
 
 ```
