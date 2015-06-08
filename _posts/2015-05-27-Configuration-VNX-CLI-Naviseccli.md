@@ -7,7 +7,7 @@ Pour faire suite à [l'article](http://blog.okcomputer.io/2015/02/27/Initialisat
 
 #### Utilisation d'un fichier de sécurité
 
-Dans un premier temps je vous conseil d'enregistrer dans un fichier de sécurité les identifiants du compte Unisphere que vous utiliserez pour configurer la baie. Cela vous évitera de retaper à chaque commande les informations d'identification. Attention, par défaut, le fichier de sécurité est stocké dans votre profil utilisateur.
+Dans un premier temps je vous conseille d'enregistrer dans un fichier de sécurité les identifiants du compte Unisphere que vous utiliserez pour configurer la baie. Cela vous évitera de retaper à chaque commande les informations d'identification. Attention, par défaut, le fichier de sécurité est stocké dans votre profil utilisateur.
 
 Créer un fichier de sécurité pour l'utilisateur sysadmin:
 
@@ -16,6 +16,11 @@ naviseccli -AddUserSecurity -Scope 0 -user sysadmin -password sysadmin
 ```
 
 Une fois fait, vous pourrez executer vos commandes naviseccli sans fournir d'identifiants.
+
+#### Quelques remarques sur la syntaxe à utiliser pour Naviseccli
+
+- Pour passer une liste en argument (par exemple une liste d'IP), il suffit d'ajouter un espace entre chaque élément (192.168.1.1 192.168.1.2 etc...)
+- Les disques sont nommés en fonction de leur emplacement dans la baie et sous la forme `numérodubus_numérodelenclosure_numéroemplacement`. Par exemple si dans Unisphere vous voyez un disque référencé `Bus 0 Enclosure 1 Disk 10` l'équivalent pour Navisseccli sera `0_1_10`
 
 #### Etapes de configuration
 
@@ -32,11 +37,6 @@ Passons maintenant à la configuration de la baie. Les différentes étapes sero
 - Ajout d'un LUN dans un Storage Group
 
 > Les différentes options des commandes seront bien sur à modifier en fonction de la configuration de votre baie (emplacement des disques) et des IP des différents serveurs de votre infrastructure (NTP, DNS).
-
-#### Quelques remarques sur la syntaxe à utiliser pour Naviseccli
-
-- Pour passer une liste en argument (par exemple une liste d'IP), il suffit d'ajouter un espace entre chaques elements (192.168.1.1 192.168.1.2 etc...)
-- Les disques sont nommés en fonction de leur emplacement dans la baie et sous la forme `numérodubus_numérodelenclosure_numéroemplacement`. Par exemple si dans Unisphere vous voyez un disque référencé `Bus 0 Enclosure 1 Disk 10` l'équivalent pour Navisseccli sera `0_1_10`
 
 #### Configuration de la baie
 ##### Modifier le nom des SP:
@@ -83,7 +83,8 @@ naviseccli -h 192.168.1.100 storagepool -create -disks 0_0_4 0_0_5 0_0_6 0_0_7 0
 
 ##### Création d'un LUN:
 
-
+L'argument `-type` permet de spécifier si l'onsouhaite créer un LUN  thin ou nonThin (Thick...). L'argument `-l` permet de définir l'ID du LUN. Attention, il faut bien penser à préciser la taille du LUN avec l'arguement `-capacity` ainsi que l'unité de mesure souhaité avec l'argument `-sq`
+ (ici 1024 Go).
 
 ```
 naviseccli -h 192.168.1.100 lun -create -type nonThin -poolName Pool01  -capacity 1024 -sq gb -name LUN01 -l 0
@@ -100,9 +101,11 @@ naviseccli -h 192.168.1.100 storagegroup -create -gname SG01
 ```
 naviseccli -h 192.168.1.100 storagegroup -connecthost -host esxi01.domain.local -gname SG01
 ```
-> Les hosts doivent êtres vues (zoning configuré, Unisphere Host Agent installé et configuré) par la baie avant d'être associés à un storage group
+> Les hosts doivent êtres vues (zoning configuré, Unisphere Host Agent installé et configuré) par la baie avant d'êtres associés à un storage group
 
 ##### Ajout d'un LUN à un Storage Group:
+
+La particularité de cette commande est que le LUN est identifié par son ID avec l'arguement `-alu`. l'argument `-hlu` permet de spécifier quel sera l'ID du LUN présenté aux hôtes.
 
 ```
 naviseccli -h 192.168.1.100 storagegroup -addhlu -gname SG01 -hlu 0 -alu 0
