@@ -50,7 +50,7 @@ naviseccli -h 192.168.1.101 networkadmin -set -name vnx01spb
 ##### Configuration NTP:
 
 ```
-naviseccli -h 192.168.1.100 ntp -set -start yes -servers 192.168.1.3 192.168.1.4
+naviseccli -h 192.168.1.100 ntp -set -start yes -interval 45 -servers 192.168.1.3 192.168.1.4
 ```
 
 ##### Configuration DNS:
