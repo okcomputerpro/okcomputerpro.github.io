@@ -37,6 +37,12 @@ naviseccli -h 1.1.1.1 -user sysadmin -password sysadmin -scope 0 domain -list
 naviseccli -h 1.1.1.2 -user sysadmin -password sysadmin -scope 0 domain -list
 ```
 
+Initialiser le domaine en créant un utilisateur (ici sysadmin)
+
+```
+naviseccli -h 1.1.1.1 -user sysadmin -password sysadmin -scope 0 security -adduser -user sysadmin -password sysadmin -scope 0 -role administrator -type system
+```
+
 Configurer l'adresse IP cible du SPA
 
 ```
