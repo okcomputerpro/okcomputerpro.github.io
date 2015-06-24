@@ -10,7 +10,7 @@ relative_permalinks: true
 
 # Setup
 title:               OK Computer
-tagline:             'Le blog d'Erwan Quélin'
+tagline:             'Le blog d'Erwan Quelin'
 description:         'Ici on parle essentiellement virtualisation, stockage et OS mais pas que !'
 url:                 http://blog.okcomputer.io
 baseurl:             /
