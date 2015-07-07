@@ -25,6 +25,7 @@ Une fois fait, vous pourrez executer vos commandes naviseccli sans fournir d'ide
 ### Etapes de configuration
 
 Passons maintenant à la configuration de la baie. Les différentes étapes seront les suivantes:
+
 - Modification des noms des SP (facultatif...)
 - Synchronisation du temps avec des serveurs NTP
 - Configuration des serveurs DNS et du domaine
